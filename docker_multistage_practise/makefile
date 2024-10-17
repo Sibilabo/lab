@@ -26,7 +26,7 @@ run-prod: build-prod
 	@echo ${TAG_PROD} started
 
 nginx-proxy:
-	@docker run -d --name proxy --mount type=bind,source=C:\Users\sonia\Desktop\PROJECTS\lab\docker_multistage_practise\nginx\nginx.conf,target=/etc/nginx/nginx.conf --network ${NETWORK} -p 8080:80 nginx:1.27.2
+	@docker run -d --name proxy --mount type=bind,source=.\nginx\nginx.conf,target=/etc/nginx/nginx.conf --network ${NETWORK} -p 8080:80 nginx:1.27.2
 	@echo proxy started
 
 stop:
